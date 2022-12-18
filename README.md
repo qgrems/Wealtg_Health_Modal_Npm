@@ -9,20 +9,41 @@
 ```bash
 npm install --save modal-save-employee-p14
 ```
-
+## Table of props
+|   | Unit          | Example |
+| :--------------- |:---------------:| -----:|
+| Content |   String        |  "Employee Crée" |
+| Toggle | Boolean             |   false or true |
+| action  | function          |     function openModal() { setmodalState(!toggle) } |
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import './App.css';
+import React from 'react';
+import Modal from 'modal-save-employee-p14';
 
-import MyComponent from 'modal-save-employee-p14'
-import 'modal-save-employee-p14/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+export function App() {
+  const [modalState, setmodalState] = React.useState(false)
+  const [content, setContent] = React.useState("");
+  function openModal(){
+    setmodalState(!modalState)
 }
+function saveData(){
+      setContent("Employee Crée")
+      openModal()
+}
+  return (
+    <div className="App">
+      <header className="App-header">
+      <Modal content={content} toggle={modalState} action={openModal}/>
+      <button variant="outlined" onClick={saveData}>AfficheModal</button>
+      </header>
+    </div>
+  );
+}
+
+export default App; 
+
 ```
 
 ## License

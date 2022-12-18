@@ -1,8 +1,9 @@
 {
   "name": "modal-save-employee-p14",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "React modal message validation save employee",
   "author": "qgrems",
+  "keywords": ["React","Modal"],
   "license": "MIT",
   "repository": "qgrems/modal-save-employee-p14",
   "main": "dist/index.js",
